@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polished - Nail Artistry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 100%);
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff85b3 0%, #ff66a3 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 20px rgba(255, 102, 163, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 0.6s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #d4467c;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(212, 70, 124, 0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff85b3 0%, #ff66a3 100%);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 102, 163, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 102, 163, 0.4);
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #d4467c;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(255, 102, 163, 0.15);
+            transition: all 0.3s;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(255, 102, 163, 0.25);
+        }
+
+        .service-card h3 {
+            color: #ff66a3;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-options {
+            margin: 1rem 0;
+        }
+
+        .service-option {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ffe0f0;
+        }
+
+        .service-option:last-child {
+            border-bottom: none;
+        }
+
+        .service-name {
+            color: #666;
+        }
+
+        .price {
+            color: #d4467c;
+            font-weight: bold;
+        }
+
+        .nail-art-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(255, 102, 163, 0.15);
+            margin-top: 2rem;
+        }
+
+        .nail-art-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .nail-art-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 100%);
+            border-radius: 10px;
+        }
+
+        .policies {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(255, 102, 163, 0.15);
+        }
+
+        .policy-section {
+            margin-bottom: 2rem;
+        }
+
+        .policy-section h3 {
+            color: #ff66a3;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .policy-section li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .policy-section li:before {
+            content: "💅";
+            position: absolute;
+            left: 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff0f6 0%, #ffe6f2 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #ff66a3;
+            margin: 1rem 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #ffc4dd 0%, #ffb3d1 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 102, 163, 0.2);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 8px 25px rgba(255, 102, 163, 0.3);
+        }
+
+        .contact {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(255, 102, 163, 0.15);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .contact-item h3 {
+            color: #ff66a3;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #ff85b3 0%, #ff66a3 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Tablet styles */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 0 1.5rem;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            section {
+                padding: 0 1.5rem;
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                gap: 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .nail-art-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .contact {
+                padding: 2rem 1.5rem;
+            }
+
+            .policies {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .cta-button {
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Small mobile styles */
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                gap: 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                margin: 2rem auto;
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+                margin-bottom: 2rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .nail-art-section {
+                padding: 1.5rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                font-size: 2.5rem;
+            }
+
+            .contact {
+                padding: 1.5rem 1rem;
+            }
+
+            .policies {
+                padding: 1.5rem 1rem;
+            }
+
+            .contact-item {
+                min-width: 100%;
+            }
+
+            .cta-button {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            section {
+                margin: 2rem auto;
+            }
+        }
+
+        /* Large screens */
+        @media (min-width: 1400px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">💅 Polished</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#policies">Policies</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Book</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Acrylic Nail Artistry</h1>
+        <p>Professional acrylic nails with stunning designs & personalized care</p>
+        <a href="#contact" class="cta-button">Book Your Appointment</a>
+    </div>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Acrylic Pedicure</h3>
+                <div class="service-options">
+                    <div class="service-option">
+                        <span class="service-name">Plain</span>
+                        <span class="price">R130</span>
+                    </div>
+                    <div class="service-option">
+                        <span class="service-name">Design</span>
+                        <span class="price">R150</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Acrylic Manicure - Short</h3>
+                <div class="service-options">
+                    <div class="service-option">
+                        <span class="service-name">Plain</span>
+                        <span class="price">R120</span>
+                    </div>
+                    <div class="service-option">
+                        <span class="service-name">Design</span>
+                        <span class="price">R130</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Acrylic Manicure - Medium</h3>
+                <div class="service-options">
+                    <div class="service-option">
+                        <span class="service-name">Plain</span>
+                        <span class="price">R130</span>
+                    </div>
+                    <div class="service-option">
+                        <span class="service-name">Design</span>
+                        <span class="price">R170</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Acrylic Manicure - Long</h3>
+                <div class="service-options">
+                    <div class="service-option">
+                        <span class="service-name">Plain</span>
+                        <span class="price">R150</span>
+                    </div>
+                    <div class="service-option">
+                        <span class="service-name">Design</span>
+                        <span class="price">R200</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nail-art-section">
+            <h3 style="color: #ff66a3; font-size: 1.5rem; text-align: center; margin-bottom: 1rem;">Nail Art Add-Ons</h3>
+            <div class="nail-art-grid">
+                <div class="nail-art-item">
+                    <span>3D Flower</span>
+                    <span class="price">R10 each</span>
+                </div>
+                <div class="nail-art-item">
+                    <span>Bow</span>
+                    <span class="price">R5 each</span>
+                </div>
+                <div class="nail-art-item">
+                    <span>Cross</span>
+                    <span class="price">R5 each</span>
+                </div>
+                <div class="nail-art-item">
+                    <span>Other Charms</span>
+                    <span class="price">R5 each</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="policies">
+        <h2>Booking & Policies</h2>
+        <div class="policies">
+            <div class="policy-section">
+                <h3>📅 Booking & Deposits</h3>
+                <div class="highlight-box">
+                    <strong>50% deposit required</strong> to secure your appointment (deducted from total cost)
+                </div>
+                <ul>
+                    <li>Send your nail inspiration/reference image before booking</li>
+                    <li>Proof of payment must be sent to secure your slot</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h3>🔄 Changes & Cancellations</h3>
+                <ul>
+                    <li>Nail inspiration changes allowed only before arrival</li>
+                    <li>Cancellations must be made at least 2 hours before appointment</li>
+                    <li>Cancellations less than 2 hours before: 30% of total cost charged</li>
+                    <li>No-shows or same-time cancellations: deposit forfeited</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h3>⏰ Appointment Rules</h3>
+                <ul>
+                    <li>1 person allowed to accompany you</li>
+                    <li>R30 late fee if more than 15 minutes late</li>
+                    <li>If appointment clashes with next client, you'll be rebooked</li>
+                    <li>Please come with bare, clean hands</li>
+                    <li>Book a soak-off separately if needed</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h3>🔧 Nail Care & Repairs</h3>
+                <ul>
+                    <li>Contact me immediately if nails pop off within 7 days (free fix)</li>
+                    <li>After 7 days: R20 per nail to fix</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item">💖</div>
+            <div class="gallery-item">✨</div>
+            <div class="gallery-item">🌸</div>
+            <div class="gallery-item">🦋</div>
+            <div class="gallery-item">💅</div>
+            <div class="gallery-item">🌺</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact">
+            <h2>Ready to Book?</h2>
+            <p>Send your nail inspiration and let's create something beautiful!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📱 WhatsApp</h3>
+                    <p>+27 79 540 1269</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p>hello@polished.com</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 Location</h3>
+                    <p>Pretoria, Gauteng</p>
+                </div>
+            </div>
+            <br><br>
+            <div class="highlight-box" style="max-width: 600px; margin: 0 auto;">
+                <p><strong>Remember:</strong> Send your nail inspiration pic & proof of payment to secure your appointment!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Polished Nail Artistry. All rights reserved.</p>
+    </footer>
+</body>
+</html>
